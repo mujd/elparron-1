@@ -1,0 +1,131 @@
+<header>Pedidos</header>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <div class="row">
+            <!-- FILA 1 -->
+            <!-- SOLICITANTE -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Solicitante</label>
+                    <input id="txtSolicitante" type="text" class="form-control" placeholder="Nombre Solicitante">
+                </div>
+            </div>
+            <!-- TELEFONO -->
+            <div class="col-md-4 col-md-offset-2">
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input id="txtTelefono" type="text" class="form-control" placeholder="Teléfono" onkeypress="return validaTelefono(event)">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- FILA 2 -->
+            <!-- TIPO MASA -->
+
+            <div class="form-group col-md-3">
+                <label>Tipo Masa</label>
+                <select id="cmbTipoMasa" class="form-control select2" style="width: 100%;"></select>
+            </div>
+            <!--SABOR MASA-->
+            <div class="form-group col-md-3">
+                <label>Sabor Masa</label>
+                <select id="cmbSaborMasa" class="form-control select2" style="width: 100%;"></select>
+            </div>
+            <!-- SABOR -->
+            <div class="col-md-3">
+                <label>Sabor Torta</label>
+                <select id="cmbSabor" class="form-control select2" style="width: 100%;"></select>
+            </div>
+            <!-- FECHA ENTREGA -->
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Fecha Entrega</label>
+                    <div class='input-group date'>
+                        <input type='text' class="form-control" id='datePedido' placeholder="Seleccione Fecha y Hora" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.form group -->
+            <!-- time Picker -->
+        </div>
+
+        <div class="row">
+            <!-- FILA 3 -->
+            <!--SUCURSAL RETIRO-->
+            <div class="form-group col-md-3">
+                <label>Sucursal de Retiro</label>
+                <select id="cmbSucursalRetiro" class="form-control" style="width: 100%;">
+
+                </select>
+            </div>
+
+            <!--CANTIDAD PERSONAS RADIOBUTTON-->
+            <div class="col-xs-2 col-md-4" style="margin-left: 20px">
+                <label>Tamaño</label>
+                <div>
+                    <ul class="listado-ul" data-toggle="buttons" id="ulTamano"></ul>
+                </div>
+
+            </div>
+            <!--CAMPO HIDDEN-->
+            <ul id="ulTorta" style="visibility: hidden;"></ul>
+        </div>
+
+        <div class="row">
+            <!-- FILA 4 -->
+            <!-- PRECIO -->
+            <div class="col-md-3" style="margin-top: -70px;">
+                <label>Precio</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                    <!--<input id="txtPrecio" type="text" class="form-control" placeholder="" >-->
+                    <ul class="listado-ul" id="ulPrecio"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- FILA 5 -->
+            <!--BOTONES-->
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button id="btnNuevoPedido" class="btn btn-primary btn-md">Nuevo</button>
+                    <button id="btnRegistrarPedido" data-target="#alertModal" class="btn btn-success btn-md">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inicio modal -->
+			<div id="alertModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Error Detectado!</h4>
+						</div>
+						<div class="modal-body">
+							<p></p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-danger" data-dismiss="modal">
+                    Cerrar</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+</div>
+<script>
+    $(document).ready(function () {
+        pedidoCargarFechaYHora();
+        pedidoCargar();
+    });
+</script>

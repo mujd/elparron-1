@@ -1,0 +1,92 @@
+<header>Sobrantes</header>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<!-- FECHA ENTREGA -->
+			<div class="col-md-4">
+				<div class="form-group">
+					<label>Fecha Entrega</label>
+
+					<div class="input-group date">
+						<div class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</div>
+						<input type="text" class="form-control pull-left col-md-4" id="Date">
+					</div>
+					<!-- /.input group -->
+				</div>
+			</div> 
+		</div>
+		<div class="row">
+			<!--TIPO-->
+			<div class="table-responsive col-md-12">
+				<table id="sobrantes" class="table table-striped table-bordered" cellspacing="0" cellpadding="0">
+					<thead class="text-center">
+						<tr>
+							<th rowspan="2" style="vertical-align: middle;">Tipo</th>
+							<th rowspan="2" style="vertical-align: middle;">Sub-Tipo</th>
+							<th rowspan="2" style="vertical-align: middle;">Sabor</th>						
+							<th colspan="7">Redondas</th>
+							<th colspan="6">Cuadradas</th>
+							<th rowspan="2" style="vertical-align: middle;">Total</th>
+						</tr>
+						<tr> 
+							<th>6</th>
+							<th>12</th>
+							<th>18</th>
+							<th>24</th>
+							<th>30</th>
+							<th>40</th>
+							<th>50</th>
+							<th>12</th>
+							<th>18</th>
+							<th>25</th>
+							<th>30</th>
+							<th>40</th>
+							<th>50</th>			
+						</tr>	
+						
+					</thead>
+					<tbody>
+						<tr>
+							<td>Biscocho</td>
+							<td>Crema</td>
+							<td>Piña</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>	
+	</div> 
+</div>
+<script>
+
+	$(document).ready(function(){
+		$('#Date').datepicker({
+			autoclose: true,
+			todayHighlight: true,
+			locale: 'es',
+			format: 'dd/mm/yyyy'
+		});
+		$("#Time").timepicker({
+			showInputs: false,	
+			minuteStep: 1
+		});
+	});	
+
+</script>

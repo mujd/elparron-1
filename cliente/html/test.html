@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>El Parrón</title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js%22%3E"</script>
+		<script src="js/funciones.js"></script>
+	</head>
+	<body>
+		<select id="torta">
+			<option selected="selected">:: Seleccione ::</option>			
+		</select>
+		<script>
+			cma_ajaxGet("http://localhost:3000/api/masaTipo", listar);
+		function listar(oData) {
+		$(oData).each(function() {
+		$("#torta").append("<option value='" + this.id + "'>" + this.nombre + "</option>");
+		});
+		}
+			/*
+				cma_ajaxGet("http://localhost:3000/api/masatipo", listar);
+		function listar(oData) {
+		alert(1);
+		}
+			*/
+		</script>
+	</body>
+</html>

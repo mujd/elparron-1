@@ -1,0 +1,58 @@
+<header>Historico</header>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<!-- Date -->
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Fecha</label>
+				<div class="input-group date">
+					<div class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</div>
+					<input type="text" class="form-control pull-left col-md-4" id="dateHistorico" title="Seleccione Fecha">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Sucursal</label>
+				<select id="cmbSucursal" class="form-control select2" style="width: 100%;" title="Seleccione Sucursal">
+					<!--<option selected="selected">:: Seleccione una Sucursal::</option>			-->
+				</select>
+			</div>
+			
+		</div>
+		<!--<div class="form-group col-md-2">
+			<br>
+			<button id="btnBuscarHistorico" class="btn btn-primary btn-lg" title="Buscar historico">Buscar</button>
+		</div>-->
+		<div class="table-responsive col-md-10 rueda-panel">
+			<table id="tabHistorico" class="table table-striped table-bordered table-condensed tableHover" cellspacing="0">
+				<thead>
+					<tr>
+						<th class="col-md-3">Tipo</th>
+						<th class="col-md-3">Sabor</th>
+						<th class="col-md-1">6</th>
+						<th class="col-md-1">12</th>
+						<th class="col-md-1">18</th>
+						<th class="col-md-1">24</th>
+						<th class="col-md-2">Total</th>
+					</tr>
+				</thead>
+				<tbody></tbody>		
+			</table>
+		</div>
+		<div class="btn-group-md btn-group-vertical">
+			<button id="btnBuscarHistorico" class="btn btn-primary m-b-boton" title="Buscar historico">Buscar</button>
+			<button id="btnNuevoHistorico" class="btn btn-primary m-b-boton" title="Vacia historico">Nuevo</button>
+			<button id="btnRegistrarHistorico" class="btn btn-primary" title="Registrar nuevo historico">Registrar</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		historicoCargarFecha();
+		historicoCargar();
+	});
+</script>
